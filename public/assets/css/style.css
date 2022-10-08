@@ -9,9 +9,9 @@ body {
 .footer-custom{
     text-align: center;
     position: absolute;
-    bottom: 0;
     width: 100%;
     background-color: #dfeaff;
+    margin-top: 25px;
     padding-top: 25px;
 }
 

@@ -46,7 +46,7 @@ class StripeController extends AbstractController
             //'price' => $product['product']->getPrice(),
             'price_data'=>[
                 'currency' => 'eur',
-                'unit_amount' => $order->getCarrierPrice() * 100,
+                'unit_amount' => $order->getCarrierPrice(),
                 'product_data' => [
                     'name' => $order->getCarrierName(),
                     'images' => [$YOUR_DOMAIN],
@@ -66,6 +66,8 @@ class StripeController extends AbstractController
         ]);
 
         $order->setStripeSessionId($checkoutSession->id);
+        $entityManager->flush();
+
         header("HTTP/1.1 303 See Other");
         header("Location: " . $checkoutSession->url);
 

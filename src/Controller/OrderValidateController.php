@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Class\Cart;
+use App\Class\Mail;
 use App\Repository\OrderRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -36,6 +37,13 @@ class OrderValidateController extends AbstractController
             $this->entityManager->flush();
 
             //envoyer mail au client
+            $mail = new Mail();
+            $content = 'Bonjour '.$order->getUser()->getFirstname().'. Votre commande sur Un Jeu Pour Tous est réussie ! '.
+                'Vous pouvez pouvez désormais suivre votre commande à cette adresse.' ;
+            $mail->sendEmail($order->getUser()->getEmail(), $order->getUser()->getFirstname(),
+                            'Un jeu pour tous - commandé réussie',
+                                'Commande réussie', $content);
+
         }
 
 

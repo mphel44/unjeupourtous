@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent() }} - Mes commandes {% endblock %}
+
+{% block content %}
+
+    <h1>Mes commandes</h1>
+    C'est dans cet espace que vous allez pouvoir gérer toutes vos commandes. <br>
+    <a href="{{ path('compte_index') }}">Retour</a>
+    {% if orders|length == 0 %}
+        <p class="text-center">
+            Vous n'avez pas encore passé de commandes sur Un Jeu Pour Tous
+            <a href="{{ path('app_account_address_add') }}">cliquer ici</a>
+        </p>
+    {% else %}
+        <table class="table table-dark mt-3">
+            <caption>Liste des commandes</caption>
+            <thead>
+            <tr>
+                <th scope="col">Référence</th>
+                <th scope="col">Passée le</th>
+                <th scope="col">Produits</th>
+                <th scope="col">Total</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                    <tr>
+                        <td> <span class="badge badge-secondary">{{ order.reference}}</span> </td>
+                        <td>{{ order.createdAt | date('d-m-Y h:m') }}</td>
+                        <td>{{ order.orderDetails | length }}</td>
+                        <td>{{ ((order.carrierPrice + order.getTotal)/100) | number_format(2, ',', ',')}} €</td>
+                        <td class="text-right"><a href="{{ path('app_account_order_show', {'reference' : order.reference}) }}">Voir ma commande </a> </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    {% endif %}
+{% endblock %}
+

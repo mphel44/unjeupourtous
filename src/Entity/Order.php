@@ -36,21 +36,22 @@ class Order
     #[ORM\OneToMany(mappedBy: 'myOrder', targetEntity: OrderDetails::class)]
     private Collection $orderDetails;
 
-    #[ORM\Column]
-    private ?bool $isPaid = null;
-
     #[ORM\Column(length: 255)]
     private ?string $reference = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $stripeSessionId = null;
 
+    #[ORM\Column]
+    private ?int $state = null;
+
     public function __construct()
     {
         $this->orderDetails = new ArrayCollection();
     }
 
-    public function getTotal(){
+    public function getTotal()
+    {
         $total = null ;
         foreach ($this->getOrderDetails()->getValues() as $product) {
             $total = $total + ($product->getPrice() * $product->getQuantity());
@@ -143,24 +144,12 @@ class Order
 
     public function removeOrderDetail(OrderDetails $orderDetail): self
     {
-        if ($this->orderDetails->removeElement($orderDetail)) {
+        if ($this->orderDetails->removeElement($orderDetail) && $orderDetail->getMyOrder() === $this) {
             // set the owning side to null (unless already changed)
-            if ($orderDetail->getMyOrder() === $this) {
-                $orderDetail->setMyOrder(null);
-            }
+            //if ($orderDetail->getMyOrder() === $this) {
+            $orderDetail->setMyOrder(null);
+
         }
-
-        return $this;
-    }
-
-    public function isIsPaid(): ?bool
-    {
-        return $this->isPaid;
-    }
-
-    public function setIsPaid(bool $isPaid): self
-    {
-        $this->isPaid = $isPaid;
 
         return $this;
     }
@@ -185,6 +174,18 @@ class Order
     public function setStripeSessionId(?string $stripeSessionId): self
     {
         $this->stripeSessionId = $stripeSessionId;
+
+        return $this;
+    }
+
+    public function getState(): ?int
+    {
+        return $this->state;
+    }
+
+    public function setState(int $state): self
+    {
+        $this->state = $state;
 
         return $this;
     }

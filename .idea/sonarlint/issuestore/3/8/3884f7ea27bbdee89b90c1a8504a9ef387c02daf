@@ -1,5 +1,0 @@
-
-W	php:S18085"=Move this open curly brace to the beginning of the next line.(óÊÙŠùÿÿÿÿ
-d	php:S18085"JPut one space between the closing parenthesis and the opening curly brace.(óÊÙŠùÿÿÿÿ
-{	php:S1448"aClass "Order" has 22 methods, which is greater than 20 authorized. Split it into smaller classes.(´¦èÌúÿÿÿÿ
-D	php:S1066”"/Merge this if statement with the enclosing one.(åè¤c

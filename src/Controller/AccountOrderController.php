@@ -12,15 +12,9 @@ class AccountOrderController extends AbstractController
     #[Route('/compte/mes-commandes', name: 'app_account_order')]
     public function index(OrderRepository $orderRepository): Response
     {
-        $orders = $orderRepository->findBy(
-            [
-                'isPaid' => true,
-                'user' => $this->getUser()
-            ],
-            ['createdAt' => 'DESC']) ;
 
-
-        return $this->render('account/order.html.twig',[
+        $orders = $orderRepository->findSuccessOrders($this->getUser());
+        return $this->render('account/order.html.twig', [
             'orders' => $orders
         ]);
     }

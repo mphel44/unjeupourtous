@@ -7,8 +7,6 @@ H
 templates/base.html.twig,f\f\ffb3f1cfd73fdec1f0c80c63d0b5bbc1fff22022
 P
  templates/product/show.html.twig,0\b\0b8933b3a6c1abef82b84c9aa0bdf7a7f5a25860
-D
-src/Entity/Order.php,3\8\3884f7ea27bbdee89b90c1a8504a9ef387c02daf
 X
 (src/Controller/OrderCancelController.php,a\1\a18c566381fb5955e59158b6e29a1102ab9f8111
 V
@@ -19,8 +17,6 @@ F
 .src/Controller/Admin/CarrierCrudController.php,d\3\d318d14001049f7bdc2c01d55a5dfc3ffce22130
 K
 src/Entity/OrderDetails.php,a\f\aff8d4918e615df9d47659a174b59b57aaab6813
-\
-,src/Controller/Admin/OrderCrudController.php,e\d\edd9db18f43d0e6f49d0557d31e340081d818393
 M
 templates/order/add.html.twig,8\5\85822c3e13fda085cec6e59181a0517cb909c5ae
 S
@@ -29,9 +25,7 @@ Q
 !templates/account/index.html.twig,f\9\f958f1e84dacaa3d48d529f16bf6f27e8baa8969
 X
 (templates/order_validate/index.html.twig,5\6\56ff0827faaa1b21e15585a0dad63eefe665d0ff
-Q
-!templates/account/order.html.twig,d\a\da37e3c4475372ae5e48c2d1ef3dd82f1812500e
-V
-&templates/account/order_show.html.twig,7\d\7dd5d60300f10728e037f26c97507e26947d1cb6
-Y
-)src/Controller/AccountOrderController.php,8\6\86f750f70a2ee17c7642980f0a06ba69e1a4f75c
+R
+"templates/register/index.html.twig,6\1\6198dee37914786998fa55afd1a31fee5bbfa746
+O
+templates/admin/index.html.twig,3\5\35bb2cf8eda5bf4c421c1e7e92c15c64b423733e

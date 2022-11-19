@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Class\Search;
 use App\Entity\Product;
 use App\Form\SearchType;
+use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -43,16 +44,18 @@ class ProductController extends AbstractController
     }
 
     #[Route('/produit/{slug}', name: 'app_product_detail')]
-    public function show($slug): Response
+    public function show(ProductRepository $productRepository, $slug): Response
     {
         $product = $this->entityManager->getRepository(Product::class)->findOneBy(array('slug' => $slug));
+        $products = $productRepository->findBy(['isBest' => true]);
 
         if (!$product){
             return $this->redirectToRoute('app_product');
         }
 
         return $this->render('product/show.html.twig', [
-            'product' => $product
+            'product' => $product,
+            'products' => $products
         ]);
     }
 

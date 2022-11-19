@@ -1,0 +1,5 @@
+
+R	php:S1808y"=Move this open curly brace to the beginning of the next line.(ä¸¡
+z	php:S1448"`Class "User" has 21 methods, which is greater than 20 authorized. Split it into smaller classes.(¦Ãÿ¿øÿÿÿÿ
+E	php:S1066«"/Merge this if statement with the enclosing one.(˜’â
+J	php:S1066É"/Merge this if statement with the enclosing one.(Ë“Ï’ÿÿÿÿÿ

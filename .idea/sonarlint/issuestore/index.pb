@@ -1,12 +1,6 @@
 
 =
 composer.json,3\9\3957b91a0d8450cea0115cfd5af69eac90d75897
-\
-,src/Controller/Admin/DashboardController.php,3\a\3acc055723ea518defe4155e99f973ac20e2e524
-H
-templates/base.html.twig,f\f\ffb3f1cfd73fdec1f0c80c63d0b5bbc1fff22022
-P
- templates/product/show.html.twig,0\b\0b8933b3a6c1abef82b84c9aa0bdf7a7f5a25860
 X
 (src/Controller/OrderCancelController.php,a\1\a18c566381fb5955e59158b6e29a1102ab9f8111
 V
@@ -29,3 +23,25 @@ R
 "templates/register/index.html.twig,6\1\6198dee37914786998fa55afd1a31fee5bbfa746
 O
 templates/admin/index.html.twig,3\5\35bb2cf8eda5bf4c421c1e7e92c15c64b423733e
+F
+src/Form/OrderType.php,1\1\114551b8d43035499d6fa30b5e7dc50e868238d8
+Y
+)src/Controller/AccountOrderController.php,8\6\86f750f70a2ee17c7642980f0a06ba69e1a4f75c
+C
+src/Entity/User.php,0\a\0a3e99b9da178509aeb5b3fa6f5dce46bc0eb8be
+D
+src/Entity/Order.php,3\8\3884f7ea27bbdee89b90c1a8504a9ef387c02daf
+\
+,src/Controller/Admin/OrderCrudController.php,e\d\edd9db18f43d0e6f49d0557d31e340081d818393
+R
+"src/Repository/OrderRepository.php,9\1\9131b75e109519741aebf21b4ab3a3e118405f84
+V
+&templates/account/order_show.html.twig,7\d\7dd5d60300f10728e037f26c97507e26947d1cb6
+F
+src/Entity/Address.php,1\6\164f4dff2e9730c4a873dbfafee286f43d742fe1
+Q
+!templates/account/order.html.twig,d\a\da37e3c4475372ae5e48c2d1ef3dd82f1812500e
+T
+$migrations/Version20221114010334.php,9\4\948ec1ae7aecd600ed2a2cf85f3f5d18d596ac44
+T
+$migrations/Version20221114012148.php,3\c\3c44b267d546e9f491207bb526a5a49e2bd3c3d5
